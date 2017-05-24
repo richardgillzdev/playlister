@@ -7,4 +7,3 @@ export default admin.initializeApp({
   databaseURL: config.firebaseUrl
 })
 
-
