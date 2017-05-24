@@ -1,5 +1,5 @@
 import scraperjs from 'scraperjs'
-import _ from 'lodash'
+import writeToFirebase from '../writeToFirebase'
 
 scraperjs.StaticScraper.create('https://absoluteradio.co.uk/80s/music/')
   .scrape(($) => {
@@ -10,4 +10,6 @@ scraperjs.StaticScraper.create('https://absoluteradio.co.uk/80s/music/')
   })
   .then((track) => {
     console.log(track);
+    writeToFirebase('absolute80s', track.title, track)
   })
+
